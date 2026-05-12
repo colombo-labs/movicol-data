@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: movicol-db
+    environment:
+      POSTGRES_USER: movicol
+      POSTGRES_PASSWORD: movicol_dev
+      POSTGRES_DB: movicol
+    ports:
+      - "5432:5432"
+    volumes:
+      - movicol_pgdata:/var/lib/postgresql/data
+
+volumes:
+  movicol_pgdata:

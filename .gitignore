@@ -1,0 +1,37 @@
+# Data files (download with `make download` or copy from source)
+# Raw data - too large for git
+data/raw/**/*.csv
+data/raw/**/*.geojson
+data/raw/**/*.json
+data/raw/**/*.xlsx
+!data/raw/**/README.md
+
+# Processed data (regenerate with `make process`)
+data/processed/*
+!data/processed/.gitkeep
+
+# Graphs (regenerate with `make process` or copy from source)
+data/graphs/*.graphml
+!data/graphs/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+.github/workflows/

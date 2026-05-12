@@ -1,0 +1,323 @@
+# MoviCol - Dataset Catalog
+# Source: datos.gov.co (Socrata API), ArcGIS Hub, GIS Transmilenio, OSM
+# URL pattern: https://www.datos.gov.co/resource/{id}.{format}
+
+# ═══════════════════════════════════════════════════════════════
+# TRANSPORTE MASIVO (TransMilenio)
+# ═══════════════════════════════════════════════════════════════
+transmilenio:
+  - id: null
+    name: estaciones_troncales_tm
+    description: "Estaciones troncales TransMilenio (153 estaciones)"
+    format: geojson
+    source: gis_transmilenio
+    path: transmilenio/estaciones_troncales_tm.geojson
+    status: downloaded
+
+  - id: njnz-p9se
+    name: rutas_troncales_transmilenio
+    description: "Rutas troncales TransMilenio (126 rutas)"
+    format: geojson
+    source: gis_transmilenio
+    path: transmilenio/rutas_troncales_transmilenio.geojson
+    status: downloaded
+
+  - id: fet3-veag
+    name: trazados_troncales_transmilenio
+    description: "Geometría de troncales TransMilenio (20 troncales)"
+    format: geojson
+    source: gis_transmilenio
+    path: transmilenio/trazados_troncales_transmilenio.geojson
+    status: downloaded
+
+  - id: null
+    name: trazados_estaciones_tm
+    description: "Trazados entre estaciones TM"
+    format: geojson
+    source: gis_transmilenio
+    path: transmilenio/trazados_estaciones_tm.geojson
+    status: downloaded
+
+  - id: null
+    name: patios_troncales_tm
+    description: "Patios y portales TM"
+    format: geojson
+    source: gis_transmilenio
+    path: transmilenio/patios_troncales_tm.geojson
+    status: downloaded
+
+  - id: null
+    name: conexiones_troncales_tm
+    description: "Conexiones entre troncales"
+    format: geojson
+    source: gis_transmilenio
+    path: transmilenio/conexiones_troncales_tm.geojson
+    status: downloaded
+
+# ═══════════════════════════════════════════════════════════════
+# TRANSPORTE ZONAL (SITP)
+# ═══════════════════════════════════════════════════════════════
+sitp:
+  - id: hxy3-94yh
+    name: paraderos_sistema
+    description: "Paradas del sistema con coordenadas y rutas (928 registros)"
+    format: csv
+    source: datos_gov_co
+    path: sitp/paraderos_sistema.csv
+    status: downloaded
+
+  - id: yvk5-8nn5
+    name: paraderos_sitp_bogota
+    description: "Paraderos SITP Bogotá (7,694 paraderos)"
+    format: geojson
+    source: datos_gov_co
+    path: sitp/paraderos_sitp_bogota.geojson
+    status: downloaded
+
+  - id: null
+    name: paraderos_sitp_arcgis_hub
+    description: "Paraderos SITP desde ArcGIS Hub SDM"
+    format: geojson
+    source: arcgis_hub
+    path: sitp/paraderos_sitp_arcgis_hub.geojson
+    status: downloaded
+
+  - id: djsz-g96f
+    name: nodos_sitp_bogota
+    description: "Nodos de transporte SITP Bogotá (154 nodos)"
+    format: geojson
+    source: datos_gov_co
+    path: sitp/nodos_sitp_bogota.geojson
+    status: downloaded
+
+  - id: null
+    name: nodos_sitp_arcgis_hub
+    description: "Nodos SITP desde ArcGIS Hub"
+    format: geojson
+    source: arcgis_hub
+    path: sitp/nodos_sitp_arcgis_hub.geojson
+    status: downloaded
+
+  - id: null
+    name: paraderos_rutas_sitp
+    description: "Relaciones paradero-ruta SITP (42,601 relaciones)"
+    format: geojson
+    source: gis_transmilenio
+    path: sitp/paraderos_rutas_sitp.geojson
+    status: downloaded
+
+  - id: null
+    name: paraderos_zonales_sitp
+    description: "Paraderos zonales SITP"
+    format: geojson
+    source: gis_transmilenio
+    path: sitp/paraderos_zonales_sitp.geojson
+    status: downloaded
+
+  - id: null
+    name: rutas_zonales_sitp
+    description: "Rutas zonales SITP (703 rutas)"
+    format: geojson
+    source: gis_transmilenio
+    path: sitp/rutas_zonales_sitp.geojson
+    status: downloaded
+
+# ═══════════════════════════════════════════════════════════════
+# DEMANDA DE PASAJEROS
+# ═══════════════════════════════════════════════════════════════
+demanda:
+  - id: 2h8t-2zik
+    name: pasajeros_transporte_masivo
+    description: "Pasajeros por día/sistema/ciudad (1,000 registros)"
+    format: csv
+    source: datos_gov_co
+    path: demanda/pasajeros_transporte_masivo.csv
+    status: downloaded
+
+# ═══════════════════════════════════════════════════════════════
+# SINIESTRALIDAD
+# ═══════════════════════════════════════════════════════════════
+siniestralidad:
+  - id: rs3u-8r4q
+    name: sectores_criticos_siniestralidad
+    description: "Tramos peligrosos con geolocalización (316 tramos)"
+    format: csv
+    source: datos_gov_co
+    path: siniestralidad/datos_gov_co/sectores_criticos_siniestralidad.csv
+    status: downloaded
+
+  - id: null
+    name: vehiculos_accidentes_bogota
+    description: "Vehículos en accidentes Bogotá (50,000+ registros)"
+    format: csv
+    source: fuentes_alternativas
+    path: siniestralidad/fuentes_alternativas/vehiculos_accidentes_bogota.csv
+    status: downloaded
+
+# ═══════════════════════════════════════════════════════════════
+# RED VIAL
+# ═══════════════════════════════════════════════════════════════
+red_vial:
+  - id: ie7y-asdn
+    name: red_vial_nacional
+    description: "Red vial nacional con geometría (44 tramos, 14MB)"
+    format: csv
+    source: datos_gov_co
+    path: red_vial/red_vial_nacional.csv
+    status: downloaded
+
+# ═══════════════════════════════════════════════════════════════
+# MOVILIDAD VEHICULAR
+# ═══════════════════════════════════════════════════════════════
+vehicular:
+  - id: u3vn-bdcy
+    name: parque_automotor_bogota
+    description: "Parque automotor Bogotá (3,160 registros)"
+    format: csv
+    source: datos_gov_co
+    path: vehicular/parque_automotor_bogota.csv
+    status: downloaded
+
+  - id: null
+    name: trafico_peajes_invias
+    description: "Tráfico peajes INVIAS (60,780 registros)"
+    format: csv
+    source: datos_gov_co
+    path: vehicular/trafico_peajes_invias.csv
+    status: downloaded
+
+  - id: null
+    name: trafico_vehicular_peajes_ani
+    description: "Tráfico vehicular peajes ANI"
+    format: csv
+    source: datos_gov_co
+    path: vehicular/trafico_vehicular_peajes_ani.csv
+    status: downloaded
+
+  - id: null
+    name: pesaje_vehiculos_carga
+    description: "Pesaje vehículos de carga"
+    format: csv
+    source: datos_gov_co
+    path: vehicular/pesaje_vehiculos_carga.csv
+    status: downloaded
+
+# ═══════════════════════════════════════════════════════════════
+# MOVILIDAD URBANA (complementaria)
+# ═══════════════════════════════════════════════════════════════
+movilidad_urbana:
+  - id: null
+    name: pasajeros_carretera_origen_destino
+    description: "Pasajeros carretera origen-destino"
+    format: csv
+    source: datos_gov_co
+    path: movilidad_urbana/pasajeros_carretera_origen_destino.csv
+    status: downloaded
+
+  - id: null
+    name: aereo_origen_destino_bogota
+    description: "Transporte aéreo origen-destino Bogotá"
+    format: csv
+    source: datos_gov_co
+    path: movilidad_urbana/aereo_origen_destino_bogota.csv
+    status: downloaded
+
+# ═══════════════════════════════════════════════════════════════
+# OPENSTREETMAP (Red vial completa)
+# ═══════════════════════════════════════════════════════════════
+osm:
+  - id: null
+    name: bogota_roads
+    description: "Red vial completa Bogotá desde OSM (30MB)"
+    format: json
+    source: openstreetmap
+    path: osm/bogota_roads.json
+    status: downloaded
+
+  - id: null
+    name: bogota_main_roads
+    description: "Vías principales Bogotá desde OSM (9MB)"
+    format: json
+    source: openstreetmap
+    path: osm/bogota_main_roads.json
+    status: downloaded
+
+# ═══════════════════════════════════════════════════════════════
+# GRAFOS CONSTRUIDOS (output de process.py)
+# ═══════════════════════════════════════════════════════════════
+graphs:
+  - name: grafo_movilidad_bogota
+    description: "Grafo base: 7,444 nodos, 41,990 aristas"
+    format: graphml
+    path: ../graphs/grafo_movilidad_bogota.graphml
+    status: built
+
+  - name: grafo_movilidad_bogota_enriched
+    description: "Grafo enriquecido con features (siniestralidad, centralidad)"
+    format: graphml
+    path: ../graphs/grafo_movilidad_bogota_enriched.graphml
+    status: built
+
+  - name: grafo_integrado_bogota
+    description: "Grafo integrado completo (TM + SITP + red vial)"
+    format: graphml
+    path: ../graphs/grafo_integrado_bogota.graphml
+    status: built
+
+# ═══════════════════════════════════════════════════════════════
+# PENDIENTES — Fase 2 (post-MVP)
+# ═══════════════════════════════════════════════════════════════
+pendientes:
+  - id: ecpz-jhmd
+    name: siniestralidad_bogota_anuarios
+    description: "Anuarios siniestralidad 2020-2024 con geolocalización precisa"
+    format: xlsx
+    source: datosabiertos.bogota.gov.co
+    status: requires_login
+    reason: "Requiere login institucional en datosabiertos.bogota.gov.co. Contiene lat/lon exacta de cada accidente."
+    impact: alto
+
+  - id: null
+    name: demanda_pasajeros_postpandemia
+    description: "Datos de demanda de pasajeros 2021-2025"
+    format: csv
+    source: datosabiertos.bogota.gov.co
+    status: requires_login
+    reason: "Los datos actuales son de 2020 (pandemia). Se necesitan datos actualizados para predicciones realistas."
+    impact: alto
+
+  - id: null
+    name: gtfs_transmilenio
+    description: "GTFS: horarios, frecuencias, tiempo real TransMilenio"
+    format: gtfs
+    source: transmilenio_sa
+    status: not_public
+    reason: "Transmilenio S.A. no publica GTFS abiertamente. Habilitaría predicción temporal real."
+    impact: alto
+
+  - id: 2gfp-jiqi
+    name: red_semaforica_bogota
+    description: "Red semafórica de Bogotá"
+    format: csv
+    source: datos_gov_co
+    status: available_not_downloaded
+    reason: "Disponible en datos.gov.co pero no descargado aún. Feature útil para congestión en intersecciones."
+    impact: medio
+
+  - id: null
+    name: ciclovias_bogota
+    description: "Red de ciclovías y estaciones BiciTM"
+    format: geojson
+    source: ideca
+    status: to_explore
+    reason: "IDECA tiene datos geoespaciales de Bogotá. Agregaría capa de movilidad en bicicleta."
+    impact: medio
+
+  - id: null
+    name: aforos_vehiculares
+    description: "Aforos y velocidades vehiculares"
+    format: csv
+    source: simur_sdm
+    status: to_explore
+    reason: "SIMUR/SDM tiene datos de flujos vehiculares reales. Mejoraría predicción de congestión vehicular."
+    impact: medio
