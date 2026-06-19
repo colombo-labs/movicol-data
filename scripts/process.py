@@ -52,8 +52,9 @@ def load_siniestralidad() -> pd.DataFrame:
     return df
 
 
-def build_graph(tm_stations: gpd.GeoDataFrame, paraderos: pd.DataFrame,
-                rutas: gpd.GeoDataFrame) -> nx.Graph:
+def build_graph(
+    tm_stations: gpd.GeoDataFrame, paraderos: pd.DataFrame, rutas: gpd.GeoDataFrame
+) -> nx.Graph:
     """Build the mobility graph from TM stations and SITP stops."""
     g = nx.Graph()
 
