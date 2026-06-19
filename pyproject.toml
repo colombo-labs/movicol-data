@@ -1,6 +1,6 @@
 [project]
 name = "movicol-data"
-version = "0.1.0"
+version = "0.2.0"
 description = "ETL pipelines and data processing for MoviCol - Urban Mobility Graph"
 requires-python = ">=3.11"
 dependencies = [
