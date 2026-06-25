@@ -34,3 +34,5 @@ venv/
 
 # OS
 .DS_Store
+exports/ai/*.json
+!exports/ai/.gitkeep
