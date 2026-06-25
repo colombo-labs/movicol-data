@@ -297,12 +297,11 @@ pendientes:
 
   - id: 2gfp-jiqi
     name: red_semaforica_bogota
-    description: "Red semafórica de Bogotá"
-    format: csv
-    source: datos_gov_co
-    status: available_not_downloaded
-    reason: "Disponible en datos.gov.co pero no descargado aún. Feature útil para congestión en intersecciones."
-    impact: medio
+    description: "Red semafórica de Bogotá (1,462 intersecciones)"
+    format: geojson
+    source: arcgis_hub_sdm
+    status: downloaded
+    path: semaforos/red_semaforica_bogota.geojson
 
   - id: null
     name: ciclovias_bogota
