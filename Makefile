@@ -22,5 +22,8 @@ lint:
 format:
 	ruff format scripts/
 
+sitp-graph:
+	python scripts/build_sitp_graph.py
+
 test:
 	pytest tests/ -v
