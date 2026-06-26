@@ -1,20 +1,38 @@
-# Exported Datasets
+# Exports
 
-Processed GeoJSON files ready to be consumed by frontend and backend services.
+## ⚠️ DEPRECATED — Migrado a ArcGIS REST API
 
-## Usage
-These files are the **single source of truth**. Copy them to the respective repos:
+A partir de junio 2026, **todos los datos estáticos fueron eliminados** de este directorio.
+El backend (`movicol-backend`) ahora consume datos directamente desde las APIs públicas de
+ArcGIS FeatureServer de la Secretaría Distrital de Movilidad de Bogotá.
 
-```bash
-# Frontend (TM data)
-cp exports/frontend/*.geojson ../movicol-frontend/public/data/
+### Datasets migrados
 
-# Backend (SITP data)
-cp exports/backend/*.geojson ../movicol-backend/data/
+| Dato | API ArcGIS | Records |
+|------|-----------|---------|
+| Paraderos SITP | `Paraderos_SITP_Bogotá_D_C` | 7,694 |
+| Paraderos por Ruta SITP | `Paraderos_Ruta` | 41,038 |
+| Estaciones TransMilenio | `Estaciones_y_trazados_de_Transmilenio_WFL1` (Layer 0) | 149 |
+| Rutas Troncales TM | `Estaciones_y_trazados_de_Transmilenio_WFL1` (Layer 2) | 155 |
+| Trazados Troncales TM | `Trazados_Troncales_de_TRANSMILENIO` | 20 |
+| Rutas SITP (shapes) | `Rutas_SITP` | 700 |
+| Carril Preferencial | `Carril_Preferencial_SITP_Bogota_D_C` | 8 |
+| Siniestros 2024 | `Siniestros_graves_2024` | 12,908 |
+| Siniestros por Localidad | `Siniestros_Fallecidos_por_Localidad` | 20 |
+
+### Base URL
+```
+https://services2.arcgis.com/NEwhEo9GGSHXcRXV/arcgis/rest/services/{SERVICE_NAME}/FeatureServer/{LAYER}/query?where=1=1&outFields=*&f=geojson
 ```
 
-## Contents
-- `frontend/tm_troncales.geojson` — 20 TransMilenio trunk routes
-- `frontend/tm_estaciones.geojson` — 332 TM stations
-- `backend/sitp_rutas_paraderos.geojson` — 42,601 stops across 689 routes
-- `backend/sitp_paraderos.geojson` — SITP bus stops
+### Cache
+El backend usa Redis con TTL de 24 horas. Primera request fetcha de ArcGIS (~2-5s),
+las siguientes son instantáneas desde cache.
+
+### Archivos eliminados
+- `sitp_paraderos.geojson` (1 MB)
+- `sitp_rutas_paraderos.geojson` (30 MB)
+- `tm_rutas_troncales.json` (1.5 MB)
+- `siniestralidad.json` (351 KB)
+- `frontend/tm_estaciones.geojson`
+- `frontend/tm_troncales.geojson`
