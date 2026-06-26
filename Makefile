@@ -25,5 +25,8 @@ format:
 sitp-graph:
 	python scripts/build_sitp_graph.py
 
+enrich-siniestralidad:
+	python scripts/enrich_siniestralidad.py
+
 test:
 	pytest tests/ -v
