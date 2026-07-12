@@ -1,5 +1,8 @@
 .PHONY: install download process load clean lint test
 
+# Default env: local
+ENV ?= local
+
 install:
 	pip install -e ".[dev]"
 
@@ -9,8 +12,18 @@ download:
 process:
 	python scripts/process.py
 
+# Load to specific environment
 load:
+	@echo "📦 Loading data to [$(ENV)]..."
+	@cp .env.$(ENV) .env
 	python scripts/load_postgis.py
+	@echo "✅ Done loading to $(ENV)"
+
+load-local:
+	$(MAKE) load ENV=local
+
+load-dev:
+	$(MAKE) load ENV=dev
 
 clean:
 	rm -rf data/raw/* data/processed/* data/graphs/*
@@ -27,6 +40,3 @@ sitp-graph:
 
 enrich-siniestralidad:
 	python scripts/enrich_siniestralidad.py
-
-test:
-	pytest tests/ -v

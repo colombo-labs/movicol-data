@@ -1,3 +1,7 @@
+# Env files with secrets (only .env.example and .env.local are safe)
+.env
+.env.dev
+.env.pro
 # Data files (download with `make download` or copy from source)
 # Raw data - too large for git
 data/raw/**/*.csv
